@@ -5,7 +5,7 @@ import UnopDropdown from 'unop-react-dropdown'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList } from '@fortawesome/free-solid-svg-icons';
 
-export const NavBar = () => {
+const NavBar = () => {
     const handler = ()=>{  }
   return (
     <div className='flex justify-between h-16 items-center'>
@@ -39,3 +39,6 @@ export const NavBar = () => {
     </div>
   )
 }
+
+
+export default NavBar

@@ -1,6 +1,18 @@
-import React from 'react'
+
+
+const SignUp = () => {
+  return (
+    <div>SignUp</div>
+  )
+}
+
+export default SignUp
+
+
+
+/*
 import { useState } from 'react';
-export const InformationPage = () => {
+export const SignUp = () => {
     const [step, setStep] = useState(1);
     const [userType, setUserType] = useState('');
     const [email, setEmail] = useState('');
@@ -82,8 +94,7 @@ export const InformationPage = () => {
             </form>
           )}
 
-        {/* Add more steps for selecting services and location */}
       </div>
     );
 }
-
+*/

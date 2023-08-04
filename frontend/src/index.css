@@ -16,10 +16,45 @@
   font-family: 'Poppins', sans-serif;
 }
 :root{
-    --green-color :rgba(133, 208, 39, 1);
-    --white-color:rgba(255, 255, 255, 1);
+    --green-color :#3BB143;
 }
 
+
+
+.btn-primary {
+    @apply hover:bg-[#339041] transition hover:scale-105 bg-[var(--green-color)] w-fit 
+    font-semibold px-6 py-2 rounded-md text-sm text-white active:scale-100
+}
+
+section.contact input,
+.auth input,
+section.contact textarea,
+section.contact select{
+  @apply w-full border-2 border-solid border-gray-300 px-4 py-2 rounded-md dark:bg-slate-700
+}
+
+section.contact input:invalid:focus ~ span.err,
+section.contact textarea:invalid:focus ~ span.err{
+  @apply block 
+}
+section.contact input:invalid:focus,
+section.contact textarea:invalid:focus{
+  @apply outline-red-800 
+}
+section.contact input:valid:focus,
+section.contact textarea:valid:focus{
+  @apply outline-green-800 
+}
+section.contact select,
+section.contact input[type='text']{
+  @apply capitalize
+}
+section.contact select option{
+  @apply capitalize
+}
+
+
+/*
 .title{
     @apply text-3xl p-6
 }
@@ -38,4 +73,4 @@
 .agro{
     color: var(--green-color);
     @apply text-4xl 
-}
+}*/

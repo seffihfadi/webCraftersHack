@@ -1,0 +1,5 @@
+//export { default as NavBar } from './NavBar'
+export { default as Header } from './Header'
+export { default as Footer } from './Footer'
+export { default as SideBar } from './dashboard/SideBar'
+export { default as AddService } from './AddService'
