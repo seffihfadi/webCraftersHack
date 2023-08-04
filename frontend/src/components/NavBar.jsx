@@ -8,7 +8,7 @@ import { faList } from '@fortawesome/free-solid-svg-icons';
 export const NavBar = () => {
     const handler = ()=>{  }
   return (
-    <div className='flex justify-between h-16 items-center'>
+    <div className='flex justify-around h-16 items-center'>
         <Link to='/' > Logo </Link>
         <div className='hidden md:flex gap-12'>
             <Link to='/home' >Home</Link>

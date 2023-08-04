@@ -1,8 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+<<<<<<< HEAD
+.title{
+    @apply text-3xl p-6
+}
+.button{
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded
+}
+.input{
+    @apply  text-blue-700 px-4 rounded-md focus:outline-none border-solid my-5 border-2 border-blue-700 h-9  
+}
+.drop-down{
+    @apply font-bold py-2 px-4 rounded w-[100px]
+}
+=======
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 .material-symbols-rounded {
@@ -15,27 +30,5 @@
 * {
   font-family: 'Poppins', sans-serif;
 }
-:root{
-    --green-color :rgba(133, 208, 39, 1);
-    --white-color:rgba(255, 255, 255, 1);
-}
 
-.title{
-    @apply text-3xl p-6
-}
-.button{
-    background-color: var(--green-color);
-    @apply  text-white font-bold py-2 px-4 rounded
-}
-.input{
-    color: var(--green-color);
-    border: 2 solid var(--green-color);
-    @apply   px-4 rounded-md focus:outline-none  my-5 h-9  
-}
-.drop-down{
-    @apply font-bold py-2 pr-14 rounded w-[300px]
-}
-.agro{
-    color: var(--green-color);
-    @apply text-4xl 
-}
+>>>>>>> 3d2aed94d21e868d1293b2c28a20a3d3dd6e69a8

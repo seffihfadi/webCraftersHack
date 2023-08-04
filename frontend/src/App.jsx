@@ -11,12 +11,18 @@ const App = () => {
 
   return (
     <div>
+<<<<<<< HEAD
       <Router>
         <Routes>
           <Route path="/" element={<WelcomePage/>}/>
           <Route path="/info" element={<InformationPage/>}/>
         </Routes>
       </Router>
+=======
+      <div> hello world </div>
+      <h1 className="text-4xl">Hackathon | {snap.team}</h1>
+      <span class="material-symbols-rounded text-5xl">home</span>
+>>>>>>> 3d2aed94d21e868d1293b2c28a20a3d3dd6e69a8
     </div>
   )
 }
