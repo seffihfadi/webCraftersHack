@@ -9,7 +9,7 @@ const Footer = () => {
   };
 
   return (
-    <div style={backgroundStyles} className='md:px-[140px] px-20 pb-16'>
+    <div style={backgroundStyles} className='md:px-[140px] px-20 pb-16 text-white'>
       <h2 className='text-3xl text-center pt-20 pb-10 '> Contact us </h2>
       <div className='flex md:flex-row gap-10 flex-col  md:justify-between'>
         <div className='flex-1'>

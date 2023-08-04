@@ -12,7 +12,7 @@ import linkedin from '../assets/linkedin.png'
 import instgram from '../assets/instgram.png'
 const Home = () => {
   const backgroundStyles = {
-    backgroundImage: `url(${background})`, // Use template literal to insert the image URL
+    backgroundImage: `url(${background})`, 
   };
 
 
@@ -32,7 +32,7 @@ const Home = () => {
           </div> 
       </div>
       {/*   our service part  */}
-      <div className='bg-[#032F3C] md:px-[140px] px-20 pb-5'>
+      <div className='bg-[#032F3C] md:px-[140px] px-20 pb-5' id='services'>
         <h2 className='text-3xl text-center pt-24 pb-8'> Our service </h2>
         <p>At Agroland, we understand that successful farming requires more than just passion—it
            demands access to the right resources and skilled professionals. 
@@ -59,7 +59,7 @@ const Home = () => {
         </div>
       </div>
       {/*   about us part  */}
-      <div className='md:px-[140px] px-20 pb-20 bg-[#032F3C]'>
+      <div className='md:px-[140px] px-20 pb-20 bg-[#032F3C]' id='about'>
       <h2 className='text-3xl text-center pt-24 pb-16 '> About us </h2>
         <div className='flex flex-wrap justify-center gap-20 pt-16'>
           <div className='relative'>
@@ -101,6 +101,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div id='contact'></div>
       <Footer/>
     </div>
   )

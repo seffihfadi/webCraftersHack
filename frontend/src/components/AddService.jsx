@@ -1,7 +1,9 @@
 
 const AddService = () => {
   return (
-    <div>AddService</div>
+    <div>
+      Add service
+    </div>
   )
 }
 
