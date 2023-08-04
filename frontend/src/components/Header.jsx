@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import UnopDropdown from 'unop-react-dropdown'
-
+import logo from '../assets/logo.png'
 const Header = () => {
   const handler = ()=>{  }
   return (
     <div className='flex justify-between h-16 items-center'>
-        <Link to='/' > Logo </Link>
+        <Link to='/' className='w-5 h-5' > <img src={logo} /> </Link>
         <div className='hidden md:flex gap-12'>
             <Link to='/home' >Home</Link>
             <Link to='/service'> Service</Link>

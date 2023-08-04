@@ -19,8 +19,6 @@
     --green-color :#3BB143;
 }
 
-
-
 .btn-primary {
     @apply hover:bg-[#339041] transition hover:scale-105 bg-[var(--green-color)] w-fit 
     font-semibold px-6 py-2 rounded-md text-sm text-white active:scale-100
@@ -52,8 +50,6 @@ section.contact input[type='text']{
 section.contact select option{
   @apply capitalize
 }
-
-
 
 .title{
     @apply text-3xl p-6

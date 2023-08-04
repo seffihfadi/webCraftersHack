@@ -1,9 +1,13 @@
 import { AddService } from "../components"
+import Service from "../components/profile/Service"
 
 const Profile = () => {
   return (
     <div>
-      Profile
+      <div>
+        
+      </div>
+      <Service/>
       <AddService />
     </div>
     
