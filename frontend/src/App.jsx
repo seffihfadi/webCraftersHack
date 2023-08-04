@@ -11,6 +11,7 @@ const App = () => {
     <div>
       <div> hello world </div>
       <h1 className="text-4xl">Hackathon | {snap.team}</h1>
+      <span class="material-symbols-rounded text-5xl">home</span>
     </div>
   )
 }
