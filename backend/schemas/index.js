@@ -1,3 +1,8 @@
-import testi from "./test"
+import test1 from "./test"
 
-export const schemaTypes = [testi]
+export const schemaTypes = [test1]
+
+
+
+
+

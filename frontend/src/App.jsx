@@ -1,7 +1,9 @@
 import { useSnapshot } from "valtio"
 import state from "./store"
-import { client } from "./config/sanity"
-
+// import { client } from "./config/sanity"
+import { BrowserRouter as Router , Routes , Route } from "react-router-dom"
+import { InformationPage } from "./pages/InformationPage"
+import { WelcomePage } from "./pages/WelcomePage"
 
 const App = () => {
 
@@ -9,8 +11,12 @@ const App = () => {
 
   return (
     <div>
-      <div> hello world </div>
-      <h1 className="text-4xl">Hackathon | {snap.team}</h1>
+      <Router>
+        <Routes>
+          <Route path="/" element={<WelcomePage/>}/>
+          <Route path="/info" element={<InformationPage/>}/>
+        </Routes>
+      </Router>
     </div>
   )
 }
