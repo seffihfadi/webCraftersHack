@@ -54,7 +54,7 @@ section.contact select option{
 }
 
 
-/*
+
 .title{
     @apply text-3xl p-6
 }
@@ -73,4 +73,4 @@ section.contact select option{
 .agro{
     color: var(--green-color);
     @apply text-4xl 
-}*/
+}
