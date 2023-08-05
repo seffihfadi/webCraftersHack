@@ -36,7 +36,6 @@ const AddService = () => {
           <div className="flex justify-between items-center">
             <button onClick={handleSubmit} className="btn-primary ml-auto">Add</button>
           </div>
-          
         </div>
         </motion.form>
       </div>
