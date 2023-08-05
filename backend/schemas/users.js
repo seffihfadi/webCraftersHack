@@ -4,8 +4,18 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'username',
+      name: 'uname',
       title: 'User Name',
+      type: 'string',
+    },
+    {
+      name: 'tel',
+      title: 'Phone Number',
+      type: 'string',
+    },
+    {
+      name: 'uniqID',
+      title: 'uniqID',
       type: 'string',
     },
     {
@@ -29,7 +39,7 @@ export default {
       type: 'number',
     },
     {
-      name: 'serviceType',
+      name: 'service',
       title: 'Service Type',
       type: 'string',
     },
