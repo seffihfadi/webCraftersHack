@@ -25,7 +25,7 @@ const AddService = () => {
               <textarea className='bg-[#D9D9D9] pl-9 py-3 w-[350px] rounded-2xl h-[150px] text-[#032F3C] focus:outline-none' placeholder='Service description' required />
             </div>
           </div>
-          <input type='submit' className='btn-primary hover:cursor-pointer' value ='Add service'/> 
+          <input type='submit' className='bg-[#85D027] p-2 rounded-xl hover:bg-[#6ABF4A] hover:cursor-pointer' value ='Add service'/> 
         </form>
       </div>
     </div>

@@ -28,7 +28,7 @@ const Home = () => {
           Join us now, and let prosperity in agriculture abide.
           </p>
           <div className='my-[50px] md:my-[120px]  flex justify-end'>
-            <Link to='/signin' className="btn-primary">Get started</Link>
+            <Link to='/signin' className="bg-[#85D027] p-2 rounded-xl hover:bg-[#6ABF4A]">Get started</Link>
           </div> 
       </div>
       {/*   our service part  */}
@@ -40,19 +40,19 @@ const Home = () => {
 
         {/* service */}
         <div className='relative my-14'>
-          <h2 className='absolute btn-primary top-[-22px] left-16'> <i className='material-symbols-rounded mx-2'>Motorcycle</i>  Materials</h2>
+          <h2 className='absolute bg-[#85D027] p-2 rounded-xl hover:bg-[#6ABF4A] top-[-22px] left-16'> <div className='flex '><i className='material-symbols-rounded mx-2'>motorcycle</i> <div>Materials</div> </div></h2>
           <p className='bg-[#D9D9D9] text-black px-8 py-8 rounded-2xl'>From top-quality seeds and fertilizers to cutting-edge machinery, we provide a wide range of agricultural
              materials to boost your productivity and ensure healthy crop growth.</p>
         </div>
         {/* service */}
         <div className='relative my-14'>
-          <h2 className='absolute btn-primary top-[-22px] left-16'> <i className='material-symbols-rounded mx-2'>Engineering</i>  Workers </h2>
+          <h2 className='absolute bg-[#85D027] p-2 rounded-xl hover:bg-[#6ABF4A] top-[-22px] left-16'> <div className='flex '><i className='material-symbols-rounded mx-2'>engineering</i> <div>Workers</div> </div> </h2>
           <p className='bg-[#D9D9D9] text-black px-8 py-8 rounded-2xl'>Finding reliable and skilled workers for your farm is essential. Our platform connects you with experienced laborers, technicians, 
           and experts who will work diligently to support your farming endeavors.</p>
         </div>
         {/* service */}
         <div className='relative my-14'>
-          <h2 className='absolute btn-primary top-[-22px] left-16'> <i className='material-symbols-rounded mx-2'>Opacity</i>  Water </h2>
+          <h2 className='absolute bg-[#85D027] p-2 rounded-xl hover:bg-[#6ABF4A] top-[-22px] left-16'><div className='flex '><i className='material-symbols-rounded mx-2'>Opacity</i> <div>Water</div> </div>  </h2>
           <p className='bg-[#D9D9D9] text-black px-8 py-8 rounded-2xl'>Proper water management is vital for a thriving farm.
            Our experts offer tailored solutions for irrigation systems and water conservation,
            ensuring that your crops receive the right amount of water at the right time.</p>
