@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
-    const handler = ()=>{  }
   return (
     <div className='flex justify-between h-16 items-center'>
         <Link to='/' > Logo </Link>

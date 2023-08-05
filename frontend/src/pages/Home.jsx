@@ -1,5 +1,5 @@
 
-//import { NavBar } from '../components'
+import { NavBar } from '../components'
 import { Header } from '../components'
 import { Link } from 'react-router-dom'
 const Home = () => {

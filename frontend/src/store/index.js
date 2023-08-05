@@ -1,7 +1,14 @@
 import { proxy } from "valtio"
 
+
+
 const state = proxy({
-  team: 'webCrafters'
+  team: 'webCrafters',
+  step: 1,
+  isprovider: false,
+  msg: '',
+
+  
 })
 
 export default state

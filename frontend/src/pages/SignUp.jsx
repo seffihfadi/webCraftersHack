@@ -1,100 +1,127 @@
-
+import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
+import { Model, Step1, Step2, Step3, Step4 } from '../components'
+import { useState, useEffect } from 'react'
+import { useSnapshot } from 'valtio'
+import state from '../store'
+import { v4 } from 'uuid'
+import { client } from '../config/sanity'
 
 const SignUp = () => {
+
+  const [location, setLocation] = useState(null);
+
+  useEffect(() => {
+    const getLocation = () => {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            setLocation({ latitude, longitude });
+          },
+          (error) => {
+            console.error("Error getting user's location:", error);
+          }
+        );
+      } else {
+        console.log("Geolocation is not available in this browser.");
+      }
+    };
+
+    getLocation();
+  }, []);
+  const snap = useSnapshot(state)
+  const navigate = useNavigate()
+  const [isSending, setIsSending] = useState(false)
+  const [signupForm, setSignupForm] = useState({
+    isprovider: snap.isprovider,
+    text: '',
+    password: '',
+    tel: '',
+    service: '',
+    desc: ''
+  })
+  const isProvider = signupForm.isprovider == 'false' ? false : true
+
+  const handleChange = (e) => {
+    setSignupForm({...signupForm, [e.target.name]: e.target.value})
+  }
+
+  const handleSubmit = () => {
+    if ((signupForm.text == '' || signupForm.password == '' || signupForm.tel == '') || (isProvider && (signupForm.service == '' || signupForm.desc == ''))) {
+      state.msg = 'reload and fill in all inputs'
+    } else {
+      const uniqID = v4()
+      localStorage.setItem('agroland-uid', uniqID)
+      setIsSending(true)
+      //console.log('signupForm', signupForm)
+      const userDoc = {
+        _id: signupForm.tel,
+        _type: 'users',
+        uniqID: uniqID,
+        uname: signupForm.text,
+        tel: signupForm.tel,
+        location: {
+          lng: location.latitude,
+        lat: location.longitude,
+        alt: 0
+        },
+        password: signupForm.password,
+        isProvider: isProvider,
+        desc: signupForm.desc,
+        service: signupForm.service
+      }
+      
+      client.create(userDoc).then(() => {
+        setIsSending(false)
+        navigate(snap.isprovider ? '/profile' : '/dashboard')
+      }).catch((err) => {
+        if (err) throw state.msg = `user with tel ${signupForm.tel} already exist`
+      })
+    }
+  }
+
+  const imgPath = `/src/assets/imgs/sign${snap.step}.png`
+
+  const generateStep = (step) => {
+    switch (step) {
+      case 1:
+        return <Step1 onChange={handleChange} />
+        break;
+      case 2:
+        return <Step2 onChange={handleChange} />
+        break;
+      case 3:
+        return <Step3 onChange={handleChange} />
+        break;
+      case 4:
+        return <Step4 isSending={isSending} onClick={handleSubmit} />
+        break;
+      default:
+        return null
+        break;
+    }
+  }
+  
+
   return (
-    <div>SignUp</div>
+    <section className="sign up overflow-hidden transition-all">
+      <motion.div initial={{opacity: 0}} animate={{opacity: 1}} key={snap.step} transition={{duration: .6}} style={{backgroundImage: `url(${imgPath})`}} className="cover overflow-hidden"></motion.div>
+      <div className="form">
+        {snap.msg && <Model msg={snap.msg} />}
+        <motion.form 
+          onSubmit={(e) => {e.preventDefault()}} 
+          initial={{opacity: 0, x:200}} 
+          animate={{opacity: 1, x:0}} 
+          key={snap.step} 
+          transition={{duration: .6}} 
+          className='w-full'
+        >
+          { generateStep(snap.step) }
+        </motion.form>
+      </div>
+    </section>
   )
 }
 
 export default SignUp
-
-
-
-/*
-import { useState } from 'react';
-export const SignUp = () => {
-    const [step, setStep] = useState(1);
-    const [userType, setUserType] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [selectedService, setSelectedService] = useState('');
-    const [location, setLocation] = useState('');
-    const [results, setResults] = useState([]);
-  
-    const handleUserTypeSelect = (selectedType) => {
-      setUserType(selectedType);
-      setStep(step + 1);
-    };
-  
-    const handleFormSubmit = (e) => {
-      e.preventDefault();
-      const result = {
-        userType,
-        email,
-        selectedService,
-        location,
-      };
-      setResults([...results, result]);
-      // You can reset the state or navigate to a different page at this point
-    };
-  
-    return (
-      <div className='flex justify-center'>
-        {step === 1 && (
-          <div>
-            <h2 className='title'>Choose User Type:</h2>
-            <div className='flex justify-around'>
-                <button className='button' onClick={() => handleUserTypeSelect('farmer')}>Farmer</button>
-                <button className='button' onClick={() => handleUserTypeSelect('serviceProvider')}>Service Provider</button>
-            </div>
-          </div>
-        )}
-  
-        {step === 2 && (
-        <div>
-            <h2 className='title'>Enter Email and Password:</h2>
-          <form 
-          onSubmit={handleFormSubmit}
-          className='flex flex-col'
-          >
-            <input
-              type="email"
-              value={email}
-              className='input'
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
-            />
-            <input
-              type="password"
-              className='input'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
-            />
-            <button type="submit" className='button' > Next </button>
-          </form>
-        </div>
-        )}
-        {step === 3 && (
-            <form onSubmit={handleFormSubmit}>
-              <h2 className='title'>Enter Service and Location:</h2>
-              <input
-                type="text"
-                value={selectedService}
-                onChange={(e) => setSelectedService(e.target.value)}
-                placeholder="Service"
-              />
-              <input
-                type="text"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                placeholder="Location"
-              />
-              <button type="submit">Next</button>
-            </form>
-          )}
-
-      </div>
-    );
-}
-*/

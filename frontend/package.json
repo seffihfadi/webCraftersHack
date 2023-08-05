@@ -18,6 +18,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.2",
     "unop-react-dropdown": "^0.2.3",
+    "uuid": "^9.0.0",
     "valtio": "^1.11.1"
   },
   "devDependencies": {

@@ -17,60 +17,81 @@
 }
 :root{
     --green-color :#3BB143;
+    --dark-green: #032F3C;
 }
 
 
+.container{
+  @apply mx-auto sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1200px] px-6 md:px-0
+}
 
+button {
+  @apply transition hover:scale-105 active:scale-100 w-fit font-semibold px-6 py-2
+}
 .btn-primary {
-    @apply hover:bg-[#339041] transition hover:scale-105 bg-[var(--green-color)] w-fit 
-    font-semibold px-6 py-2 rounded-md text-sm text-white active:scale-100
+    @apply hover:bg-[#339041] bg-[var(--green-color)] rounded-md text-sm text-white 
+}
+.btn-choise{
+  @apply text-black text-lg flex justify-center items-center bg-white rounded-md m-auto w-[90%]
+}
+.btn-choise span{
+  @apply text-3xl mr-5
+}
+.or {
+  @apply w-full text-center relative my-10 font-semibold text-xl
+}
+.or::before{
+  @apply content-[''] h-[2px] w-[40%] bg-[var(--green-color)] absolute left-0 top-3.5
+}
+.or::after{
+  @apply content-[''] h-[2px] w-[40%] bg-[var(--green-color)] absolute right-0 top-3.5
+}
+.sign {
+  @apply w-full h-screen flex
+}
+.sign .cover{
+  @apply w-full md:w-2/5 h-full bg-cover bg-center bg-no-repeat 
 }
 
-section.contact input,
-.auth input,
-section.contact textarea,
-section.contact select{
-  @apply w-full border-2 border-solid border-gray-300 px-4 py-2 rounded-md dark:bg-slate-700
+.sign form {
+  @apply flex justify-center items-center w-full
 }
-
-section.contact input:invalid:focus ~ span.err,
-section.contact textarea:invalid:focus ~ span.err{
-  @apply block 
+.sign .form{
+  @apply bg-[#1a1a1ac3] md:bg-[var(--dark-green)] w-full h-full absolute md:relative md:w-3/5 z-10
+  flex justify-center items-center text-white
 }
-section.contact input:invalid:focus,
-section.contact textarea:invalid:focus{
-  @apply outline-red-800 
+.sign .form .content {
+  @apply w-[90%] md:w-[70%] lg:w-[60%] xl:w-[45%] p-8
 }
-section.contact input:valid:focus,
-section.contact textarea:valid:focus{
-  @apply outline-green-800 
+.grp {
+  @apply flex flex-col text-black relative my-10
 }
-section.contact select,
-section.contact input[type='text']{
-  @apply capitalize
+.grp label{
+  @apply text-white mb-2
 }
-section.contact select option{
-  @apply capitalize
+.grp input, .grp select, .grp textarea{
+  @apply outline-none ring-0 p-2 rounded-md pl-12
+}
+.grp span {
+  @apply absolute left-3 top-10
 }
 
 
-/*
-.title{
-    @apply text-3xl p-6
+.dashboard {
+  @apply w-full h-screen flex
 }
-.button{
-    background-color: var(--green-color);
-    @apply  text-white font-bold py-2 px-4 rounded
+.dashboard nav {
+  @apply w-14 md:w-56 border-r-[1px] shadow-lg bg-[var(--dark-green)] text-white
 }
-.input{
-    color: var(--green-color);
-    border: 2 solid var(--green-color);
-    @apply   px-4 rounded-md focus:outline-none  my-5 h-9  
+.dashboard nav a span{
+  @apply mr-2
 }
-.drop-down{
-    @apply font-bold py-2 pr-14 rounded w-[300px]
+.dashboard nav a h5 {
+  @apply hidden md:block
 }
-.agro{
-    color: var(--green-color);
-    @apply text-4xl 
-}*/
+.dashboard nav a{
+  @apply flex relative items-center p-3 my-4 first-of-type:mt-10
+}
+.dashboard nav a.active::before{
+  @apply content-[''] w-1 h-full bg-[var(--green-color)] left-0 top-0 absolute rounded-tr-md rounded-br-md
+}
