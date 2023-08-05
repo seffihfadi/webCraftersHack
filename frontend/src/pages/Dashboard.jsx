@@ -3,9 +3,11 @@ import { Logo } from '../components'
 import { userQuery } from "../config/serverData"
 import { useEffect, useState } from "react"
 import { client } from '../config/sanity'
+import { useSnapshot } from 'valtio'
+import state from '../store'
 
 const Dashboard = () => {
-  //const farmer = useSnapshot(farmerData)
+  const snap = useSnapshot(state)
   const navigate = useNavigate()
   const [farmer, setFarmer] = useState(null)
   useEffect(() => {
@@ -13,7 +15,8 @@ const Dashboard = () => {
     if (uniqID) {
       client.fetch(userQuery(uniqID)).then((data) => {
         if (data.length > 0) {
-          setFarmer(data)
+          setFarmer(data[0])
+          state.tel = data[0].tel
         }else{
           localStorage.removeItem('agroland-uid')
           navigate('/signin')

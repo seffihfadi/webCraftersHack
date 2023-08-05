@@ -12,7 +12,7 @@ export { default as Input } from './form/Input'
 export { default as Head } from './form/Head'
 
 // sign
-
+export { default as Logout } from './sign/Logout'
 export { default as Step1 } from './sign/Step1'
 export { default as Step2 } from './sign/Step2'
 export { default as Step3 } from './sign/Step3'

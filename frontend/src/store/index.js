@@ -7,6 +7,8 @@ const state = proxy({
   step: 1,
   isprovider: false,
   msg: '',
+  uid: localStorage.getItem('agroland-uid'),
+  tel: ''
 
   
 })

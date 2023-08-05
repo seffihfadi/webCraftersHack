@@ -74,7 +74,7 @@ const SignUp = () => {
       
       client.create(userDoc).then(() => {
         setIsSending(false)
-        navigate(snap.isprovider ? '/profile' : '/dashboard')
+        navigate(snap.isprovider ? `/profile/${data[0].tel}` : '/dashboard')
       }).catch((err) => {
         if (err) throw state.msg = `user with tel ${signupForm.tel} already exist`
       })

@@ -26,15 +26,20 @@
 .container{
   @apply mx-auto sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1200px] px-6 md:px-0
 }
-
-button {
-  @apply transition hover:scale-105 active:scale-100 w-fit font-semibold px-6 py-2
+button:disabled{
+  @apply hover:scale-100 active:scale-100 bg-[#5c9765] hover:bg-[#5c9765]
+}
+button, a {
+  @apply transition hover:scale-105 active:scale-100 
+}
+a{
+  @apply hover:scale-100 active:scale-100 scale-100 
 }
 .btn-primary {
-    @apply hover:bg-[#339041] bg-[var(--green-color)] rounded-md text-sm text-white 
+    @apply hover:bg-[#339041] bg-[var(--green-color)] rounded-md text-sm text-white font-semibold px-6 py-2
 }
 .btn-choise{
-  @apply text-black text-lg flex justify-center items-center bg-white rounded-md m-auto w-[90%]
+  @apply text-black text-lg flex justify-center items-center bg-white rounded-md m-auto w-[90%] font-semibold px-6 py-2
 }
 .btn-choise span{
   @apply text-3xl mr-5

@@ -1,22 +1,26 @@
 import {Link} from 'react-router-dom'
+import { useSnapshot } from 'valtio'
+import state from '../../store'
 
+import Ser from './Ser'
 
-const Service = () => {
-  const services = [{title:'Harvesting machine',description:'These is professional maching to hervest your land and profit your money '},
-  {title:'Planted patatoes machine',description:'These is professional maching to planted your land and profit your money '}]
+const Service = ({ user }) => {
+  const snap = useSnapshot(state)
+
+  
   return (
-    <div>
-      <div className='flex justify-between items-center mb-5'>
-        <h2 className='text-2xl mt-10 mb-4'> Services :  </h2>
-        <button className="btn-primary h-10"><Link to='/add-service'> Add services </Link></button>
+    <div className='py-20'>
+      <div className='flex justify-between items-center my-10'>
+        <h2 className='text-xl capitalize'> Services That {user?.uname} Provide :  </h2>
+        {snap.uid === user.uniqID &&
+        <Link className="btn-primary flex items-center" to='/add-service'> 
+          <span className="material-symbols-rounded mr-2">add</span>
+          add service 
+        </Link>
+        }
       </div>
       <div className='grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 grid-row-2 md:grid-row-3 gap-8'>
-        {services.map((service, index) => (
-          <div key={index} className='bg-white p-8 rounded-lg shadow-lg '>
-            <h3 className="text-center pb-4 text-2xl text-[#032F3C] ">{service.title}</h3>
-            <p className=" text-green-800">{service.description}</p>
-          </div>
-        ))}
+        {user?.services.map((service, index) => ( <Ser key={index} service={service} user={user} /> ))}
       </div>
     </div>
   )

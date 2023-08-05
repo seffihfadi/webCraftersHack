@@ -5,3 +5,20 @@ export const userQuery = (id) => {
 export const userByUnQuery = (username) => {
   return `*[_type == 'users' && uname == '${username}']`
 }
+export const userByTelQuery = (tel) => {
+  return `*[_type == 'users' && tel == '0561018596']{
+    ..., 
+    services [] -> {
+      desc,
+      title,
+      _id,
+      price,
+      isAvailable,
+      img {
+        asset -> {
+          url
+        }
+      }
+    }
+  }`
+}

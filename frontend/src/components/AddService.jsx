@@ -1,35 +1,46 @@
 import farmer from '../assets/farmer.png'
+import { Head, Input, Model } from '../components'
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 const AddService = () => {
 
+  const handleChange = () => {
+
+  }
+  const handleSubmit = () => {
+    
+  }
   return (
-  <>  
-    <div className=" flex bg-[#032F3C] text-white">
-      <img src={farmer} className='h-[660px] w-[370px] lg:w-[500px] hidden md:block '/>
-      <div className='flex-1 mt-14'>
-        <h2 className='text-2xl text-center mt-10 mb-4'> Add service   </h2>
-        <form method='POST'
-        className='flex flex-col items-center mb-20  gap-8' 
-        > 
-          <div>
-            <h2 className='py-4'> Service title </h2>
-            <div className='relative'>
-              <i className='material-symbols-rounded text-[#032F3C] absolute top-[7px] left-2'>title</i>
-              <input className='bg-[#D9D9D9] pl-9 py-5 w-[350px] h-9 focus:outline-none text-[#032F3C] rounded-xl ' type='Text' required  placeholder='Service title'/>
-            </div>
+    <section className="sign overflow-hidden transition-all">
+      <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: .6}} style={{backgroundImage: `url(${farmer})`}} className="cover overflow-hidden"></motion.div>
+      <div className="form">
+        <motion.form 
+          
+          initial={{opacity: 0, x:200}} 
+          animate={{opacity: 1, x:0}}
+          transition={{duration: .6}} 
+          className='w-full'
+          
+        >
+        <div className="content">
+          <Head head='Add Service' desc='Add Another Service' />
+          <Input onChange={handleChange} name='text' title='Sevice Title' icon='construction' />
+          <Input onChange={handleChange} name='text' title='Price Per Hour' icon='euro' />
+          
+          <div className="grp">
+            <label htmlFor="desc">Description</label>
+            <textarea onChange={handleChange} name="desc" id="desc" cols="30" rows="5" placeholder='describe your service' required={true}></textarea>
+            <span className="material-symbols-rounded">description</span>
           </div>
-          <div>
-            <h2 className='pb-4'> Services description</h2>
-            <div className='relative'>
-              <i className='material-symbols-rounded text-[#032F3C] absolute top-3 left-2 '>info</i>
-              <textarea className='bg-[#D9D9D9] pl-9 py-3 w-[350px] rounded-2xl h-[150px] text-[#032F3C] focus:outline-none' placeholder='Service description' required />
-            </div>
+          <div className="flex justify-between items-center">
+            <button onClick={handleSubmit} className="btn-primary ml-auto">Add</button>
           </div>
-          <input type='submit' className='btn-primary hover:cursor-pointer' value ='Add service'/> 
-        </form>
+          
+        </div>
+        </motion.form>
       </div>
-    </div>
-  </>
+    </section>
 )}
 
 export default AddService

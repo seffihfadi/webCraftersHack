@@ -1,6 +1,7 @@
 import { Head } from '../'
 import { useSnapshot } from 'valtio'
 import state from '../../store'
+import { Link } from 'react-router-dom'
 
 const Step1 = ({ onChange }) => {
 
@@ -35,6 +36,10 @@ const Step1 = ({ onChange }) => {
           <span className="material-symbols-rounded">local_shipping</span>
           A Services Provider
         </button>
+      </div>
+      <div className="flex justify-between items-center mt-10">
+        <p>Have an account ?</p>
+        <Link to='/signin' className="text-[#3BB143]">Login</Link>
       </div>
     </div>
   )

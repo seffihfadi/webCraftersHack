@@ -24,24 +24,25 @@ const SignIn = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault()
-    
-    setSending(true)
-    //console.log('loginForm', loginForm)
-    client.fetch(userByUnQuery(loginForm.text)).then((data) => {
-      //console.log('data', data)
-      setSending(false)
-      if(data.length > 0) {  // fix it soon (move it to backend)
-        if (data[0].password === loginForm.password) {
-          localStorage.setItem('agroland-uid', data[0].uniqID)
-          //console.log('data', data)
-          navigate(data[0].isProvider ? '/profile' : '/dashboard')
+    if (loginForm.password == '' || loginForm.text == ''){
+      state.msg = 'fill in inputs'
+    }else{
+
+      setSending(true)
+      client.fetch(userByUnQuery(loginForm.text)).then((data) => {
+        setSending(false)
+        if(data.length > 0) {  // fix it soon (move it to backend)
+          if (data[0].password === loginForm.password) {
+            localStorage.setItem('agroland-uid', data[0].uniqID)
+            navigate(data[0].isProvider ? `/profile/${data[0].tel}` : '/dashboard')
+          }else{
+            state.msg = 'wrong password'
+          }
         }else{
-          state.msg = 'wrong password'
+          state.msg = 'username doesn\'t exist'
         }
-      }else{
-        state.msg = 'username doesn\'t exist'
-      }
-    })
+      })
+    }
   }
   return (
     <section className="sign in overflow-hidden transition-all">

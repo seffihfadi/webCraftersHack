@@ -6,20 +6,17 @@ export default {
     {
       name: 'farmer',
       title: 'farmer',
-      type: 'reference',
-      to: [{type: 'users'}]
+      type: 'string',
     },
     {
       name: 'serviceProvider',
       title: 'Service Provider',
-      type: 'reference',
-      to: [{type: 'users'}]
+      type: 'string',
     },
     {
       name: 'service',
       title: 'Service',
-      type: 'reference',
-      to: [{type: 'service'}]
+      type: 'string',
     },
     {
       name: 'isAccepted',
