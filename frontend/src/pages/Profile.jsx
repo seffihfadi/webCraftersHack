@@ -4,7 +4,6 @@ import {   Navigation, Pagination,Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation'
-import Footer from '../components/Footer'
 import Service from '../components/profile/Service';
 import { getCityFromCord } from '../components/GetCityFromCord';
 const Profile = () => {
@@ -56,7 +55,9 @@ const Profile = () => {
   const handleDeleteNotification = ()=>{
     console.log('delete')
   }
-
+  const handleSignOut =()=>{
+    console.log('sign out')
+  }
 
 
   const array= ['available','Employees',' 5 $','Algeria']
@@ -68,19 +69,23 @@ const Profile = () => {
     <div>
       <div className='md:px-[140px] px-20 text-white bg-[#032F3C] pb-20'>
         <div className='flex justify-between items-center'>
-          <h2 className='text-3xl pt-10 pb-16'> User profile  </h2>
-          <div className='cursor-pointer' onClick={()=>{setActive(!active)}}>
-            <i className='material-symbols-rounded'>Notifications</i>
-            {active && 
-              <div className='relative '>
-                <div className='absolute w-[300px] h-[200px] rounded-2xl top-0 right-0 overflow-y-auto z-50 bg-white text-[#032F3C]'>
-                  { notification.map((not,index)=>(
-                      <div key={index} className='p-3 border-b-2 border-solid border-[#032F3C] flex justify-between'> {not} <button onClick={()=>{handleDeleteNotification()}}> <i className='material-symbols-rounded'>delete</i></button></div>
-                  ))
-                  }
-                </div>
-              </div>}
+          <h2 className='text-3xl pt-10 pb-16'> Hello Zakarya  </h2>
+          <div className='flex gap-9'>
+            <div className='cursor-pointer' onClick={()=>{setActive(!active)}}>
+              <i className='material-symbols-rounded'>Notifications</i>
+              {active && 
+                <div className='relative '>
+                  <div className='absolute w-[300px] h-[200px] rounded-2xl top-0 right-0 overflow-y-auto z-50 bg-white text-[#032F3C]'>
+                    { notification.map((not,index)=>(
+                        <div key={index} className='p-3 border-b-2 border-solid border-[#032F3C] flex justify-between'> {not} <button onClick={()=>{handleDeleteNotification()}}> <i className='material-symbols-rounded'>delete</i></button></div>
+                    ))
+                    }
+                  </div>
+                </div>}
+            </div>
+            <button onClick={()=>{handleSignOut}}> <i className='material-symbols-rounded'>Logout</i> </button>
           </div>
+          
         </div>
         <div className=' flex lg:flex-row gap-20 items-center flex-col'>
           {/*  the photo */}
@@ -110,7 +115,6 @@ const Profile = () => {
         </div>
         <Service/>
       </div>
-      <Footer/>
     </div>
   )
 }
