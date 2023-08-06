@@ -85,7 +85,7 @@ a{
 
 
 .dashboard {
-  @apply w-full h-screen flex
+  @apply w-full min-h-screen flex
 }
 .dashboard nav {
   @apply w-14 md:w-56 border-r-[1px] shadow-lg bg-[var(--dark-green)] text-white

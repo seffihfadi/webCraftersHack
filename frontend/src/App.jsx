@@ -6,7 +6,7 @@ import Profile from "./pages/Profile"
 import Dashboard from "./pages/Dashboard"
 import NotFound from './pages/NotFound'
 import { AddService } from "./components"
-
+import { Search } from "./pages/Search"
 const App = () => {
 
 
@@ -18,6 +18,7 @@ const App = () => {
       <Route path="/profile/:id" element={ <Profile /> } />
       <Route path="/add-service" element={ <AddService /> } />
       <Route path="/dashboard" element={ <Dashboard /> } />
+      <Route path="/search" element={ <Search /> } />
       <Route path="/*" element={ <NotFound /> } />
     </Routes>
   )

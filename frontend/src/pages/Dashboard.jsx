@@ -44,7 +44,7 @@ const Dashboard = () => {
         </NavLink>
       </nav>
       <div className="content">
-
+        
       </div>
     </div>
   )
