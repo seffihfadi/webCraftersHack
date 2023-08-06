@@ -3,7 +3,10 @@ import { NavLink } from 'react-router-dom'
 import { Logo } from '../components'
 import { ProviderCard } from '../components/ProviderCard'
 import { client } from '../config/sanity'
+import { useSnapshot } from 'valtio'
+import state from '../store/index'
 export const Search = () => {
+    const snap = useSnapshot(state)
     const [active,setActive] = useState(false)
     const [selectedCategory, setSelectedCategory] = useState('All');
     const categories = ['All','Expert','Worker','Transportation','Rental of machines and tools']
@@ -28,6 +31,8 @@ export const Search = () => {
         }
     };
     
+    const farmerName = snap?.farmerName
+
   return (
     <div className="dashboard">
         <nav>
@@ -43,14 +48,14 @@ export const Search = () => {
         </nav>
         <div className='w-full bg-[#00231D] text-white'>
             <div className='flex flex-col items-center'> 
-                <h2 className='text-3xl mx-auto py-10 '> Hello Farmer  </h2>
+                <h2 className='text-3xl mx-auto py-10 '> Hello {farmerName}  </h2>
                     <div className='hidden md:flex gap-2 '>
                         <div className='flex gap-4'>
                             {   
                                 categories.map((ele,index)=>(
                                     <button key={index} className=' btn-primary' onClick={async () => {
                                         setSelectedCategory(ele)
-                                        setProviders(selectedCategory)
+                                        await fetchProviders(ele)
                                     }} > {ele} </button>
                                 ))
                             }
