@@ -8,9 +8,9 @@ const state = proxy({
   isprovider: false,
   msg: '',
   uid: localStorage.getItem('agroland-uid'),
-  tel: ''
+  tel: '',
+  farmerName:''
 
-  
 })
 
 export default state
