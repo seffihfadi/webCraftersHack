@@ -69,10 +69,9 @@ const Dashboard = () => {
             </div>
             <div>Hello {farmer?.uname }</div>
             <div className='text-2xl'> Farmer </div>
-            <div className='pb-3'> {console.log(farmer)} </div>
-            <div className='py-3'> Location : {cityData?.display_name} </div>
+            <div className='py-3'> Location : Gelal Setif </div>
             <div className='py-3'>Number : {farmer?._id}</div>
-            <div className='py-3'>Description : {farmer?._desc}</div>
+            <div className='py-3'>Description : Professsional farmer with a lot of lands and over 100 workes with milltuple land in different country </div>
           </div>
           <div className='bg-[#D9D9D9] text-black p-7 w-[450px]   rounded-2xl h-[500px]'>
             <div className='flex justify-between'>

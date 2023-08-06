@@ -30,8 +30,6 @@ export const Search = () => {
             console.error('Error fetching providers:', error);
         }
     };
-    
-    const farmerName = snap?.farmerName
 
   return (
     <div className="dashboard">
@@ -46,9 +44,9 @@ export const Search = () => {
                 <h5>Search</h5>
             </NavLink>
         </nav>
-        <div className='w-full bg-[#00231D] text-white'>
+        <div className='w-full bg-[#00231D] text-white pt-10'>
             <div className='flex flex-col items-center'> 
-                <h2 className='text-3xl mx-auto py-10 '> Hello {farmerName}  </h2>
+                 <h2 className='text-3xl mx-auto py-10 '> Hello fadi seffih  </h2>
                     <div className='hidden md:flex gap-2 '>
                         <div className='flex gap-4'>
                             {   
@@ -85,7 +83,6 @@ export const Search = () => {
                     {providers && providers.map((provider,index) => (
                         <div key={index}>
                             <ProviderCard  id={provider?._id}/>
-                            {console.log('selected categorie : '+ selectedCategory)}
                         </div>
                     ))}
                 </div>

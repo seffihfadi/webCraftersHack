@@ -84,7 +84,8 @@ const Profile = () => {
   })
 
   return (
-      <div className='container'>
+    <div className='bg-[#032F3C]'>
+      <div className='container text-white'>
         <div className='flex justify-between items-center py-10'>
           <h2 className='text-3xl capitalize'> {snap.uid === user?.uniqID && 'Hello'} {user?.uname}</h2>
           {snap.uid === user?.uniqID && <div className='flex justify-center items-center gap-5'>
@@ -106,7 +107,6 @@ const Profile = () => {
                   </div>
                 </div>}
             </div>
-            
             <Logout />
           </div>}
           
@@ -145,6 +145,7 @@ const Profile = () => {
         {user?.services && <Service user={user} />}
         
       </div>
+    </div>
   )
 }
 
