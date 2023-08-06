@@ -6,7 +6,7 @@ export const userByUnQuery = (username) => {
   return `*[_type == 'users' && uname == '${username}']`
 }
 export const userByTelQuery = (tel) => {
-  return `*[_type == 'users' && tel == '0561018596']{
+  return `*[_type == 'users' && tel == '${tel}']{
     ..., 
     services [] -> {
       desc,

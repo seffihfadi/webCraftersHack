@@ -76,6 +76,7 @@ const SignUp = () => {
         setIsSending(false)
         navigate(snap.isprovider ? `/profile/${data[0].tel}` : '/dashboard')
       }).catch((err) => {
+        console.log('err', err)
         if (err) throw state.msg = `user with tel ${signupForm.tel} already exist`
       })
     }

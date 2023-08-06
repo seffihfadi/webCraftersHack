@@ -1,4 +1,4 @@
-import background from '../assets/footer.png'
+import background from '../assets/imgs/hero1.jpg'
 import facebook from '../assets/facebook.png'
 import github from '../assets/github.png'
 import linkedin from '../assets/linkedin.png'
@@ -9,14 +9,14 @@ const Footer = () => {
   };
 
   return (
-    <div style={backgroundStyles} className='md:px-[140px] px-20 pb-16 text-white bg-cover bg-no-repeat'>
-      <h2 className='text-3xl text-center pt-20 pb-10 '> Contact us </h2>
+    <div style={backgroundStyles} className='md:px-[140px] py-32 text-white bg-bottom bg-cover bg-no-repeat'>
+      <h2 className='text-3xl text-center mb-20'> Contact us </h2>
       <div className='flex md:flex-row gap-10 flex-col  md:justify-between'>
         <div className='flex-1'>
-          <h2 style={{ color: 'rgba(133, 208, 39, 1)' }} className='text-4xl py-5 text-center'> Agrouland</h2>
-          <div className='flex gap-2 py-2 justify-center'><img src={facebook}/>  <img src={linkedin}/><img src={instgram}/><img src={github}/></div>
+          <h2 style={{ color: 'rgba(133, 208, 39, 1)' }} className='text-5xl font-bold mb-20 text-center'> Agrouland</h2>
+          <div className='flex gap-4 justify-center'><img src={facebook}/>  <img src={linkedin}/><img src={instgram}/><img src={github}/></div>
         </div>
-        <div className='md:w-[400px] w-[300px] text-center mx-auto flex-1'>
+        <div className='md:w-[400px] w-[300px] text-center text-lg mx-auto flex-1'>
           <p>
             "The farmer is the only man in our economy who buys everything at retail, 
             sells everything at wholesale, and pays the freight both ways." 

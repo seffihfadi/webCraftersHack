@@ -1,6 +1,6 @@
 import { Footer, Header } from '../components'
 import { Link } from 'react-router-dom'
-import background from '../assets/img.png'
+import background from '../assets/imgs/hero2.jpg'
 import img1 from '../assets/img1.png'
 import img2 from '../assets/img2.png'
 import img3 from '../assets/img3.png'
@@ -20,15 +20,16 @@ const Home = () => {
     <div className='text-white'>
       <div className='md:px-[140px] px-20 pb-10 bg-cover bg-no-repeat' style={backgroundStyles}>
           <Header/>
-          <p className='w-[300px ] font-bold md:w-[600px] leading-10 mt-[100px] md:mt-[140px]'>
-          Welcome to<span style={{ color: 'rgba(133, 208, 39, 1)' }} className='text-3xl' > Agrouland</span>,
-          where farmers and providers unite.
-          Cultivating connections, harvesting success, day and night.
-          Grow your network, sow the seeds of progress, far and wide.
-          Join us now, and let prosperity in agriculture abide.
-          </p>
-          <div className='my-[50px] md:my-[120px]  flex justify-end'>
-            <Link to='/signin' className="bg-[#85D027] p-2 rounded-xl hover:bg-[#6ABF4A]">Get started</Link>
+          <div className='flex flex-col py-36'>
+          
+            <h1 style={{ color: 'rgba(133, 208, 39, 1)' }} className='text-6xl font-extrabold mb-10' >Welcome to<br /> Agrouland</h1>
+            <p className='w-[90%] text-lg md:w-[60%] leading-10 mb-10'>
+              where farmers and providers unite.
+              Cultivating connections, harvesting success, day and night.
+              Grow your network, sow the seeds of progress, far and wide.
+              Join us now, and let prosperity in agriculture abide.
+            </p>
+            <Link to='/signup' className="btn-primary w-fit">Get started</Link>
           </div> 
       </div>
       {/*   our service part  */}

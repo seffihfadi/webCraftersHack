@@ -79,7 +79,7 @@ export const Search = () => {
                 <div className='flex flex-wrap justify-center gap-14 m-14'>
                     {providers && providers.map((provider,index) => (
                         <div key={index}>
-                            <ProviderCard  id={provider?.uniqID}/>
+                            <ProviderCard  id={provider?._id}/>
                             {console.log('selected categorie : '+ selectedCategory)}
                         </div>
                     ))}

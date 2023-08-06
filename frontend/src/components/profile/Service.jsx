@@ -12,12 +12,7 @@ const Service = ({ user }) => {
     <div className='py-20'>
       <div className='flex justify-between items-center my-10'>
         <h2 className='text-xl capitalize'> Services That {user?.uname} Provide :  </h2>
-        {snap.uid === user.uniqID &&
-        <Link className="btn-primary flex items-center" to='/add-service'> 
-          <span className="material-symbols-rounded mr-2">add</span>
-          add service 
-        </Link>
-        }
+        
       </div>
       <div className='grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 grid-row-2 md:grid-row-3 gap-8'>
         {user?.services.map((service, index) => ( <Ser key={index} service={service} user={user} /> ))}

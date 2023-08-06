@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation'
 import Service from '../components/profile/Service';
+import { Link } from 'react-router-dom';
 import { getCityFromCord } from '../components/GetCityFromCord';
 import { Logout } from '../components';
 import { client } from '../config/sanity';
@@ -77,12 +78,11 @@ const Profile = () => {
   const notification = ['you got a demand to job','thanj for joining as today',
   'it\'s 9:00pm you gotta gow','i hope you like our service','if you need somthing don\'t hesitate we always here for you ']
 
+  const url = []
+  user && user.services.filter((service) => {
+    url.push(service.img.asset.url)
+  })
 
-
-  const url = ['https://gonzalesequipment.com/wp-content/uploads/2018/05/farm-machines-and-their-uses.jpg',
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS55S_Ff6_mI2qyHItL4fTwvM4qrCh8B94hFkMGP5AvswIABraQ1_EZnM1daUwF6S7l63o&usqp=CAU',
-  'https://khetigaadi.com/blog/wp-content/uploads/2018/08/Mechanization-of-Indian-Agriculture-1024x591-1_800x450.jpg'
-  ,'https://i.ytimg.com/vi/d5PTKHRw2FQ/sddefault.jpg']
   return (
       <div className='container'>
         <div className='flex justify-between items-center py-10'>
@@ -134,6 +134,12 @@ const Profile = () => {
               <h3 className='py-2 capitalize'> Phone Number : {user?.tel} </h3>
               {cityData != null && <h3 className='py-2 capitalize'> Location  : {cityData?.display_name } {cityData?.address?.region} {cityData?.address?.state } {cityData?.address?.country} </h3>}
               <h3 className='py-2 capitalize'> Description : {user?.desc} </h3>
+              {snap.uid === user?.uniqID &&
+                <Link className="btn-primary flex items-center w-fit mt-5" to={`/add-service/${user._id}`}> 
+                  <span className="material-symbols-rounded mr-2">add</span>
+                  add service 
+                </Link>
+              }
             </div>
         </div>
         {user?.services && <Service user={user} />}

@@ -6,12 +6,12 @@ const Header = () => {
   const handler = ()=>{  }
   return (
     <div className='flex justify-between h-16 items-center'>
-        <a to='/' className='w-5 cursor-pointer h-5' > <img src={logo} /> </a>
+        <a to='/' className='cursor-pointer' > <img className='w-7 aspect-auto' src={logo} /> </a>
         <div className='hidden md:flex gap-12'>
-            <a className='hover:border-b-2 cursor-pointer hover:border-solid hover:border-[#3BB143] ' href='/'        >Home</a>
-            <a className='hover:border-b-2 cursor-pointer hover:border-solid hover:border-[#3BB143] ' href='#services' > Service</a>
-            <a className='hover:border-b-2 cursor-pointer hover:border-solid hover:border-[#3BB143] ' href='#about'    > About us</a>
-            <a className='hover:border-b-2 cursor-pointer hover:border-solid hover:border-[#3BB143] ' href='#contact'  > Contact </a>
+            <a className='hover:border-b-2 py-3 px-2 cursor-pointer hover:border-[#3BB143] ' href='/'        >Home</a>
+            <a className='hover:border-b-2 py-3 px-2 cursor-pointer hover:border-[#3BB143] ' href='#services' > Service</a>
+            <a className='hover:border-b-2 py-3 px-2 cursor-pointer hover:border-[#3BB143] ' href='#about'    > About us</a>
+            <a className='hover:border-b-2 py-3 px-2 cursor-pointer hover:border-[#3BB143] ' href='#contact'  > Contact </a>
         </div>
         <div className='md:hidden'>
             <UnopDropdown
